@@ -1,5 +1,14 @@
 Rails.application.routes.draw do
+  
+  namespace :api, { format: 'json' } do
+    namespace :v1 do 
+      resources :acounts
+    end
+  end
+  
   resources :acounts
+  root to: 'acounts#index'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
